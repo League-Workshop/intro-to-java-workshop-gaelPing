@@ -13,46 +13,69 @@ import javax.swing.JOptionPane;
 //import org.teachingextensions.logo.robot;
 import org.jointheleague.graphical.robot.Robot;
 
-public class RobotTreasureHunt implements KeyEventDispatcher{
+public class RobotTreasureHunt implements KeyEventDispatcher{	
 
+	
+	
+	
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
+	Robot alpha= new Robot("mini");
 	
 	private void goUp() throws InterruptedException {
-		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
 		
+		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
+		 alpha.setAngle(360);
+		alpha.microMove(5);
 	}
-
+	
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
-		
+		alpha.setAngle(180);
+		alpha.microMove(5);
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
-
+		alpha.setAngle(270);
+		alpha.microMove(5);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		alpha.setAngle(90);
+		alpha.microMove(5);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = alpha.getX();
+		int robotYLocation = alpha.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
-		
+		System.out.println(robotXLocation+" "+robotYLocation);
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
-		
+		if(robotXLocation==690 && robotYLocation==410) {
+		JOptionPane.showMessageDialog(null, "go to the bottle.");
+		}
+		if(robotXLocation==420 && robotYLocation==505) {
+		JOptionPane.showMessageDialog(null, "go to the ship.");
+		}
+		if(robotXLocation==455&& robotYLocation==360) {
+			JOptionPane.showMessageDialog(null, "go to the boy.");
+			}
+		if(robotXLocation==205&& robotYLocation==390) {
+				JOptionPane.showMessageDialog(null, "go to the skull.");
+				}
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
 		
 		// 9.  If the robot is in the final location
 		//     --call the treasureFound() method
+		if(robotXLocation==205 && robotYLocation==60) {
+			treasureFound();
+		}
 		
 	}
 
