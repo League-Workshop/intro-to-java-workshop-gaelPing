@@ -12,16 +12,49 @@ public class DragonFight {
 		
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
 		// 2. Create a variable called "playerHealth" to store your health (set it equal to 100)
-	
+	int playerHealth=100;
 		// 3. Create a variable called "dragonHealth" to store the dragon's health (set it equal to 100)
+		int dragonHealth=100;
 		
 		// 4. Create a variable to hold the damage the player's attack does each round
-		
+		int playerDamage=5;
 		// 5. Create a variable to hold the damage the dragon's attack does each round
-		
+		int dragonDamage=4;
 		
 		// 6.  Delete the slashes at the beginning of the next line.  
-		//while(playerHealth>0 && dragonHealth>0) {    //this line of code keeps the battle going until someone's health reaches 0 
+		while(playerHealth>0 && dragonHealth>0) {    
+			String yell=JOptionPane.showInputDialog("do you wish to yell at dagon.");
+			String kick=JOptionPane.showInputDialog("do you wish to kick the dagon.");
+			
+			if (kick.equals("kick")) {
+				Random ralph= new Random();
+				dragonDamage=ralph.nextInt(26);
+				dragonHealth=dragonHealth-dragonDamage;
+				}
+
+			if (yell.equals("yell")) {
+				Random randy = new Random();
+				dragonDamage=randy.nextInt(11);
+				dragonHealth=dragonHealth-dragonDamage;
+				}
+				
+		
+				Random raly= new Random();
+				playerDamage= raly.nextInt(36);
+				playerHealth=playerHealth-playerDamage;
+		
+		if(playerHealth<0){
+			JOptionPane.showMessageDialog(null, "You lose!!");
+		 }
+		else
+			if (dragonHealth<0){
+			JOptionPane.showMessageDialog(null, "You slayed the dragon and took its gold!!");
+		 }
+		else{
+			JOptionPane.showMessageDialog(null, dragonHealth+"vs"+playerHealth);	
+			}
+		}
+		}
 		
 		// 7. Add a closing mustache at the very bottom of this program (since we just added an opening mustache on the previous step).
 		
@@ -60,6 +93,11 @@ public class DragonFight {
 			
 			//-- Pop up a message that tells the their current health and the dragon's currently health (Bonus: Also display the amount of health that was lost for each player this round)
 			
-		}
+		
+
+	private static void Random(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 	}
 
