@@ -23,10 +23,10 @@ public class DragonFight {
 		
 		// 6.  Delete the slashes at the beginning of the next line.  
 		while(playerHealth>0 && dragonHealth>0) {    
-			String yell=JOptionPane.showInputDialog("do you wish to yell at dagon.");
-			String kick=JOptionPane.showInputDialog("do you wish to kick the dagon.");
+			String yell=JOptionPane.showInputDialog("do you wish to yell at or kick dagon.");
 			
-			if (kick.equals("kick")) {
+			
+			if (yell.equals("kick")) {
 				Random ralph= new Random();
 				dragonDamage=ralph.nextInt(26);
 				dragonHealth=dragonHealth-dragonDamage;
